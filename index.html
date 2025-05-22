@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Advanced Weather App</title>
+    <link rel="stylesheet" href="styles.css"
+</head>
+<body>
+    <main id="app">
+        <h1>Weather App</h1>
+
+        <form id="search-form" aria-label="Search weather by city">
+            <input 
+                type="text" 
+                id="search-input" 
+                name="city" 
+                placeholder="Enter city name" 
+                required 
+                aria-required="true"
+                aria-label="City name"
+            />
+            <button type="submit" id="search-button" aria-label="Search weather">Search</button>
+        </form>
+
+        <section id="weather-container" aria-live="polite" aria-atomic="true">
+            <header>
+                <h2 id="location" aria-label="Location name">City, Country</h2>
+                <time id="date" datetime="">Date and Time</time>
+            </header>
+
+            <section id="weather-main" aria-label="Current weather">
+                <img 
+                    id="weather-icon" 
+                    src="" 
+                    alt="Weather icon" 
+                    aria-hidden="true"
+                />
+                <div>
+                    <p id="temp" aria-label="Temperature">--°C</p>
+                    <p id="weather-description">Description</p>
+                </div>
+            </section>
+
+            <section id="weather-details" aria-label="Detailed weather information">
+                <div class="detail-item" id="humidity">
+                    <span>Humidity:</span> <span id="humidity-value">--%</span>
+                </div>
+                <div class="detail-item" id="pressure">
+                    <span>Pressure:</span> <span id="pressure-value">-- hPa</span>
+                </div>
+                <div class="detail-item" id="wind-speed">
+                    <span>Wind Speed:</span> <span id="wind-speed-value">-- m/s</span>
+                </div>
+                <div class="detail-item" id="wind-direction">
+                    <span>Wind Direction:</span> <span id="wind-direction-value">--°</span>
+                </div>
+                <div class="detail-item" id="sunrise">
+                    <span>Sunrise:</span> <time id="sunrise-time" datetime="">--:--</time>
+                </div>
+                <div class="detail-item" id="sunset">
+                    <span>Sunset:</span> <time id="sunset-time" datetime="">--:--</time>
+                </div>
+                <div class="detail-item" id="feels-like">
+                    <span>Feels Like:</span> <span id="feels-like-value">--°C</span>
+                </div>
+                <div class="detail-item" id="visibility">
+                    <span>Visibility:</span> <span id="visibility-value">-- meters</span>
+                </div>
+            </section>
+
+        </section>
+
+        <section id="status-message" role="alert" aria-live="assertive"></section>
+    </main>
+  <script src="script.js"></script>
+</body>
+</html>
